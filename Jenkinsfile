@@ -25,7 +25,9 @@ pipeline {
                     id: "MAVEN_DEPLOYER",
                     serverId: "maven_lib_release_local",
                     releaseRepo: "libs-release-local",
-                    snapshotRepo: "libs-snapshot-local"
+                    snapshotRepo: "libs-snapshot-local",
+                    username: "admin",
+                    password: "jfrog123"
                 )
             }
         }
