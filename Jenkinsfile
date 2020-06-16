@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'mvn clean install deploy' 
+                sh 'mvn clean install' 
             }
 
         }
