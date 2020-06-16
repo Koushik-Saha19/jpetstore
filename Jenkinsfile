@@ -5,11 +5,6 @@ pipeline {
         jdk 'LocalJDK'
     }
     stages {
-        stage ('Build') {
-            steps {
-                sh 'mvn clean install' 
-            }
-        }
         stage ('Artifactory configuration') {
             steps {
                 rtServer (
@@ -28,9 +23,13 @@ pipeline {
                 )
             }
         }
-        stage ('Deploy') {
+        stage ('Exec Maven') {
             steps {
-                sh 'mvn deployerId: "MAVEN_DEPLOYER" deploy'
+                rtMavenRun (
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: "MAVEN_DEPLOYER"
+                )
             }
         }
     }
