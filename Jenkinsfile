@@ -35,17 +35,10 @@ pipeline {
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER"
-                )
-            }
-        }
-        stage ('download stage') {
-            steps {
-                sh 'cd /var/lib/jenkins/workspace/pipeline-job-1'
-                rtMavenRun (
-                    pom: 'pom.xml',
                     resolverId: "MAVEN_RESOLVER"
                 )
             }
         }
+  
     }
 }
