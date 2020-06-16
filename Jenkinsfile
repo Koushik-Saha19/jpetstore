@@ -21,6 +21,12 @@ pipeline {
                     releaseRepo: "libs-release-local",
                     snapshotRepo: "libs-snapshot-local"
                 )
+                rtMavenResolver (
+                    id: "MAVEN_RESOLVER",
+                    serverId: "maven_lib_release_local",
+                    releaseRepo: "libs-release",
+                    snapshotRepo: "libs-snapshot"
+                )
             }
         }
         stage ('Exec Maven') {
@@ -29,6 +35,15 @@ pipeline {
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER"
+                )
+            }
+        }
+        stage ('download stage') {
+            steps {
+                sh 'cd /var/lib/jenkins/workspace/pipeline-job-1'
+                rtMavenRun (
+                    pom: 'pom.xml',
+                    resolverId: "MAVEN_RESOLVER"
                 )
             }
         }
