@@ -61,6 +61,18 @@
 </snapshotRepository>
 </distributionManagement>
   </distributionManagement> -->
+  <servers>
+    <server>
+      <username>admin</username>
+      <password>jfrog123</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>admin</username>
+      <password>jfrog123</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
   <distributionManagement>
       <snapshotRepository>
           <id>snapshots</id>
