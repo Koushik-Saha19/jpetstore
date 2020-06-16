@@ -15,7 +15,7 @@ pipeline {
             steps {
                 rtServer (
                     id: "maven_lib_release_local",
-                    url: http://52.142.15.74:8082/,
+                    url: "http://52.142.15.74:8082/",
                     username: "admin",
                     password: "jfrog123"
 
