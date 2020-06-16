@@ -5,12 +5,7 @@ pipeline {
         jdk 'LocalJDK'
     }
     stages {
-        stage ('Build') {
-            steps {
-                sh 'mvn clean install' 
-            }
-
-        }
+    
         stage ('Artifactory configuration') {
             steps {
                 rtServer (
@@ -25,15 +20,17 @@ pipeline {
                     id: "MAVEN_DEPLOYER",
                     serverId: "maven_lib_release_local",
                     releaseRepo: "libs-release-local",
-                    snapshotRepo: "libs-snapshot-local",
-                    username: "admin",
-                    password: "jfrog123"
+                    snapshotRepo: "libs-snapshot-local"
                 )
             }
         }
-        stage ('Deploy') {
+        stage ('Exec Maven') {
             steps {
-                sh 'mvn deploy' 
+                rtMavenRun (
+                    pom: 'pom.xml',
+                    goals: 'clean install deploy',
+                    deployerId: "MAVEN_DEPLOYER"
+                )
             }
         }
     }
