@@ -61,7 +61,13 @@
 </snapshotRepository>
 </distributionManagement>
   </distributionManagement> -->
-
+  <distributionManagement>
+      <snapshotRepository>
+          <id>snapshots</id>
+          <name>ubuntu-snapshots</name>
+          <url>http://52.142.15.74:8081/artifactory/libs-snapshot-local</url>
+      </snapshotRepository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>ognl</groupId>
