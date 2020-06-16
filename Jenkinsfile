@@ -1,27 +1,15 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'LocalMVN'
+        jdk 'LocalJDK'
+    }
     stages {
-        stage ('Compile Stage') {
+        stage ('Build') {
             steps {
-                withMaven(maven : 'Apache Maven 3.6.0') {
-                    sh 'mvn clean compile'
-                }
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
-        }
-        stage ('Testing Stage') {
-            steps {
-                withMaven(maven : 'Apache Maven 3.6.0') {
-                    sh 'mvn test'
-                }
-            }
-        }
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'Apache Maven 3.6.0') {
-                    sh 'mvn deploy'
-                }
-            }
+
         }
     }
 }
