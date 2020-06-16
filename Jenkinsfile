@@ -27,13 +27,6 @@ pipeline {
                     releaseRepo: "libs-release-local",
                     snapshotRepo: "libs-snapshot-local"
                 )
-
-                rtMavenResolver (
-                    id: "MAVEN_RESOLVER",
-                    serverId: "maven_lib_release_local",
-                    releaseRepo: "libs-release",
-                    snapshotRepo: "libs-snapshot"
-                )
             }
         }
         stage ('Deploy') {
