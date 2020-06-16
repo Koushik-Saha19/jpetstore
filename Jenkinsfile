@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sh 'mvn -DaltDeploymentRepository=libs-snapshot-local::maven-2-default::http://52.142.15.74:8082/artifactory/libs-snaps deploy' 
+                sh 'mvn deploy' 
             }
         }
     }
