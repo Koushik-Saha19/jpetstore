@@ -34,6 +34,11 @@ pipeline {
                 )
             }
         }
+        stage ('Download') {
+            steps {
+                sh "wget --user='admin' --password='jfrog123' 'http://52.142.15.74:8082/artifactory/libs-snapshot/maven-org/mybatis/maven-jpetstore/maven-6.0.2-SNAPSHOT/maven-jpetstore-maven-6.0.2-20200614.151443-15.war'"
+            }
+        }
   
     }
 }
