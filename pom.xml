@@ -62,13 +62,7 @@
 </distributionManagement>
   </distributionManagement> -->
  
-  <distributionManagement>
-      <snapshotRepository>
-          <id>snapshots</id>
-          <name>ubuntu-snapshots</name>
-          <url>http://52.142.15.74:8081/artifactory/libs-snapshot-local</url>
-      </snapshotRepository>
-  </distributionManagement>
+  
   <dependencies>
     <dependency>
       <groupId>ognl</groupId>
@@ -181,8 +175,8 @@
                         <jmeter.save.saveservice.thread_name>true</jmeter.save.saveservice.thread_name>
                         <jmeter.save.saveservice.time>true</jmeter.save.saveservice.time>
                     </propertiesUser>
-		    <testFilesDirectory>${project.basedir}/src/test/jmeter</testFilesDirectory>
-                    <resultsDirectory>${project.basedir}/src/test/resources</resultsDirectory>
+		    <testFilesDirectory>jpetstore/src/test/jmeter</testFilesDirectory>
+                    <resultsDirectory>jpetstore/src/test/resources</resultsDirectory>
                 </configuration>
                 <executions>
                     <execution>
