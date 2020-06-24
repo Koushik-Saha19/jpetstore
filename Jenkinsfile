@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Test and verify') {
             steps {
-               sh 'mvn verify'
+               sh 'mvn clean verify'
                 
             }
         }
