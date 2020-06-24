@@ -181,6 +181,8 @@
                         <jmeter.save.saveservice.thread_name>true</jmeter.save.saveservice.thread_name>
                         <jmeter.save.saveservice.time>true</jmeter.save.saveservice.time>
                     </propertiesUser>
+		    <testFilesDirectory>${project.basedir}/src/test/jmeter</testFilesDirectory>
+                    <resultsDirectory>${project.basedir}/src/test/resources</resultsDirectory>
                 </configuration>
                 <executions>
                     <execution>
