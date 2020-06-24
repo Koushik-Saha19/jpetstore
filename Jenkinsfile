@@ -13,4 +13,11 @@ pipeline {
         }
    
     }
+    post {
+        always {
+                
+                perfReport filterRegex: '', sourceDataFiles: '/var/lib/jenkins/workspace/maven-build-jmeter-test-integration/src/test/resources/test.csv'
+               
+        }
+    }
 }
