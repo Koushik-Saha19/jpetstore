@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Test and verify') {
             steps {
-               sh 'mvn clean verify'
+               sh 'mvn jmeter:jmeter'
                 
             }
         }
