@@ -5,6 +5,11 @@ pipeline {
         jdk 'LocalJDK'
     }
     stages {
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
         stage ('Jmeter Test') {
             steps {
                sh 'mvn jmeter:jmeter'
