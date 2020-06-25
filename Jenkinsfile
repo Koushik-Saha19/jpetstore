@@ -5,7 +5,7 @@ pipeline {
         jdk 'LocalJDK'
     }
     stages {
-        stage ('Test and verify') {
+        stage ('Jmeter Test') {
             steps {
                sh 'mvn jmeter:jmeter'
                 
