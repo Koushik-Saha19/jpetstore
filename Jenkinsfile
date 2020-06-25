@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage ('Test and verify') {
             steps {
+               sh 'cd ${project.base.directory}'
                sh 'mvn clean verify'
                 
             }
