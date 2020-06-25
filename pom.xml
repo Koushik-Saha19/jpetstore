@@ -148,12 +148,6 @@
                     <resultsDirectory>${project.basedir}/src/test/resources</resultsDirectory>
                 </configuration>
                 <executions>
-		    <execution>
-                        <id>configuration</id>
-                        <goals>
-                           <goal>configure</goal>
-                        </goals>
-                    </execution>
                     <execution>
                         <id>jmeter-tests</id>
                         <phase>verify</phase>
