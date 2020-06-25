@@ -155,6 +155,12 @@
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
+		    <execution>
+			<id>configuration</id>
+			<goals>
+			    <goal>configure</goal>
+			</goals>
+		    </execution>
                 </executions>
             </plugin>
         <plugin>
