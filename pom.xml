@@ -133,7 +133,7 @@
                 <configuration>
                     <testResultsTimestamp>false</testResultsTimestamp>
                     <propertiesUser>
-                        <jmeter.save.saveservice.output_format>xml</jmeter.save.saveservice.output_format>
+                        
                         <jmeter.save.saveservice.bytes>true</jmeter.save.saveservice.bytes>
                         <jmeter.save.saveservice.label>true</jmeter.save.saveservice.label>
                         <jmeter.save.saveservice.latency>true</jmeter.save.saveservice.latency>
